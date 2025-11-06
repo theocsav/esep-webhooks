@@ -41,7 +41,7 @@ namespace EsepWebhook
                 var sender   = payload.SelectToken("sender.login")?.ToString();
 
                 string text = issueUrl != null
-                    ? $"🧩 GitHub Issue *{action}* in `{repo}` by `{sender}`\n*{title}*\n{issueUrl}"
+                    ? $"GitHub Issue *{action}* in `{repo}` by `{sender}`\n*{title}*\n{issueUrl}"
                     : "Received a webhook (not an Issues payload).";
 
                 var slackBody = JsonConvert.SerializeObject(new { text });
